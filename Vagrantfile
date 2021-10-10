@@ -7,7 +7,8 @@ Vagrant.configure("2") do |config|
     nodo1.vm.network :public_network,
       :dev => "br0",
       :mode => "bridge",
-      :type => "bridge"
+      :type => "bridge",
+      :ip => "192.168.0.27"
     nodo1.vm.network :private_network,
       :libvirt__network_name => "red1",
       :libvirt__dhcp_enabled => false,
