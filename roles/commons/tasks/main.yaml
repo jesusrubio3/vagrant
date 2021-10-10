@@ -1,0 +1,3 @@
+- name: Actualización de paquetería
+  apt: update_cache=yes upgrade=yes
+

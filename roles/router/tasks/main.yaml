@@ -1,0 +1,18 @@
+- name: Activación del bit de forwarding
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: Configuración del fichero /etc/network/interfaces
+  ansible.builtin.template:
+    src: etc/network/interfaces
+    dest: /etc/network/interfaces
+    owner: root
+    group: root
+    mode: '0640'
+  notify:
+    - reinicio del sistema
+
